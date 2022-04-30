@@ -1,0 +1,48 @@
+////////////////////
+// インナー幅設定
+////////////////////
+// コンテンツのインナー幅（最も共通の幅が多い部分）
+$l-inner: 1000px;
+// ※キャンパス幅ではなくインナーの幅を指す
+
+// 色
+$background: #fff; // 背景
+$text-color: #111; // テキスト色
+
+$black: #111;
+$white: #fff;
+
+// マウスホバー
+$opacity: 0.8; // 透過度
+
+// フォント設定
+$font-family-base: ""; // ベースフォント
+$font-family-second: "";
+
+// フォント
+$font-size-base: rem(16); // ベースフォントサイズ
+$lh: 1.5; // ベース行間
+
+// フォントウェイト
+$regular: 300;
+$normal: 400; // ベースフォントウェイト
+$bold: 700;
+
+// ---
+// レイアウト
+// ---
+$l-sm: 600px; //
+$l-md: 768px; // タブレットサイズ
+$l-lg: 1024px; 
+$l-xl: 1440px; // パソコン幅
+
+// ブレークポイント（スマホ基準）
+$breakpoints: (
+  "sm": "screen and (min-width: #{$l-sm})",
+  "md": "screen and (min-width: #{$l-md})",
+  "lg": "screen and (min-width: #{$l-lg})",
+  "xl": "screen and (min-width: #{$l-xl})",
+);
+
+$padding-pc: 25px; // タブレット時の余白
+$padding-sp: 20px; // スマホ時の余白

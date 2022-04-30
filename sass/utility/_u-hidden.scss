@@ -1,0 +1,14 @@
+//モバイルのみ表示
+.u-hidden-pc {
+  @include mq("md") {
+    display: none;
+  }
+}
+
+//768px以上を表示
+.u-hidden-sp {
+  display: none;
+  @include mq("md") {
+    display: block;
+  }
+}
