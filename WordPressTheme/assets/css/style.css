@@ -563,7 +563,7 @@ summary {
 }
 
 .p-test {
-	color: red;
+	color: blue;
 	font-size: 6.25rem;
 }
 
@@ -588,7 +588,7 @@ a:hover {
 }
 
 .p-test {
-	color: green;
+	color: red;
 	font-size: 3.125rem;
 }
 
