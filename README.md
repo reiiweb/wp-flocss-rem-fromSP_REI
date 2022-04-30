@@ -1,6 +1,6 @@
 # wp-flocss-rem-fromSPの使い方
 
-- assets/style.css の名前をテーマ名に変更
+- WordPressTheme/style.css の名前をテーマ名に変更
 - locaで作成、ログイン
 - WPを日本語に
 - localのthemes全て削除し、gitファイルをそこに移動
