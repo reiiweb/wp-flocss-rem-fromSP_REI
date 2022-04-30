@@ -5,6 +5,20 @@ jQuery(function ($) {
   });
 
   jQuery(function () {
+    // ハンバーガーメニュー
+    $("#js-hamburger").click(function () {
+      $("body").toggleClass("is-drawerActive");
+      if ($(this).attr("aria-expanded") == "false") {
+        $(this).attr("aria-expanded", "true");
+        $("#js-sp-nav").attr("aria-hidden", "false");
+      } else {
+        $(this).attr("aria-expanded", "false");
+        $("#js-sp-nav").attr("aria-hidden", "true");
+      }
+    });
+
+    // デフォルト/////////////////////////////////////////
+
     // スクロール判定
     jQuery(window).on("scroll", function () {
       if (100 < jQuery(this).scrollTop()) {
