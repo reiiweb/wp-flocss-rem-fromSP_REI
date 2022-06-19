@@ -1,7 +1,17 @@
 @import "./../setting/variables";
 
 // https://wpqw.jp/snippet/form-reset/
-@charset "utf-8";
+/* フォームリセット
+---------------------------------------------------------------------------- */
+form {
+  margin: 0;
+  padding: 0;
+}
+
+label {
+  display: block;
+  cursor: pointer;
+}
 
 fieldset,
 legend {
@@ -16,11 +26,21 @@ legend {
   appearance: none;
 }
 
+input,
+select,
+optgroup,
+textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  border: none;
+}
+
 input[type="date"],
 input[type="datetime-local"],
 input[type="month"],
 input[type="time"] {
-  margin: 0;
   padding: rem(4);
   border: 1px solid #ccc;
   outline: none;
@@ -40,21 +60,24 @@ textarea,
 select {
   margin-right: 0;
   margin-left: 0;
-  padding: rem(11) rem(20);
-  border: 1px solid #1b224c;
+  background-image: none;
+  // padding: rem(11) rem(20);
+  // border: 1px solid #1b224c;
   border-radius: 0;
   outline: none;
-  background: none;
-  font-size: rem(14);
+  // background: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
 }
 
 textarea {
+  display: block;
   width: 100%;
   height: rem(100);
   overflow: auto;
+  -ms-overflow-style: scrollbar;
+  resize: vertical;
 }
 
 select {
@@ -63,6 +86,7 @@ select {
   background-repeat: no-repeat;
   background-size: rem(12) rem(12);
   background-position: right rem(8) center;
+  text-transform: none;
 }
 
 .select {
@@ -70,6 +94,7 @@ select {
   position: relative;
   overflow: hidden;
   background: #fff;
+  cursor: pointer;
 }
 .select select {
   width: 100%;
@@ -126,17 +151,31 @@ legend {
 }
 
 /* button */
+input[type="submit"] {
+  -webkit-appearance: none;
+  background-color: inherit;
+  background-image: none;
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+
+input[type="submit"]::-moz-foucus-inner {
+  border: none;
+  padding: 0;
+}
+
 input[type="reset"],
 input[type="button"] {
   display: inline-block;
-  margin: 0;
   padding: rem(10) rem(30);
   border: 1px solid #999;
   border-radius: 0;
   -webkit-box-sizing: content-box;
   -webkit-appearance: button;
   appearance: button;
-  background: #efefef;
+  // background: #efefef;
   color: #000;
   font-size: rem(20);
   cursor: pointer;
@@ -144,7 +183,7 @@ input[type="button"] {
 
 /* ブラウザ対策
 ---------------------------------------------------------------------------- */
-/* Firefox */
+// /* Firefox */
 // button::-moz-focus-inner,
 // [type="button"]::-moz-focus-inner,
 // [type="reset"]::-moz-focus-inner,
@@ -163,7 +202,7 @@ input[type="button"] {
 select::-ms-expand {
   display: none;
 }
-/* webkit */
+// /* webkit */
 // [type="number"]::-webkit-inner-spin-button,
 // [type="number"]::-webkit-outer-spin-button {
 // }
@@ -195,7 +234,7 @@ input[type="search"]::-webkit-search-decoration {
 
 /* 挙動
 ---------------------------------------------------------------------------- */
-/* hover */
+// /* hover */
 // input:hover,
 // textarea:hover,
 // select:hover {
@@ -261,10 +300,10 @@ input[type="search"]::-webkit-search-decoration {
 // }
 
 /* focus */
-input:focus,
-textarea:focus {
-  border-color: #ccc;
-}
+// input:focus,
+// textarea:focus {
+//   border-color: #ccc;
+// }
 input[type="submit"]:focus,
 input[type="reset"]:focus,
 input[type="button"]:focus,
@@ -292,7 +331,7 @@ input[type="checkbox"]:disabled + span::before {
   cursor: not-allowed;
 }
 
-/* バリデーション */
+// /* バリデーション */
 input:valid {
 }
 input:invalid {
@@ -300,21 +339,9 @@ input:invalid {
 input:required {
 }
 /* placeholder */
-input::-webkit-input-placeholder,
-textarea::-webkit-input-placeholder {
+input::placeholder,
+textarea::placeholder {
   color: #b4b4b4;
   font-size: rem(12);
-  padding-top: rem(2);
-}
-input::-moz-placeholder,
-textarea::-moz-placeholder {
-  color: #b4b4b4;
-  font-size: rem(12);
-  padding-top: rem(2);
-}
-input:-ms-input-placeholder,
-textarea:-ms-input-placeholder {
-  color: #b4b4b4;
-  font-size: rem(12);
-  padding-top: rem(2);
+  // padding-top: rem(2);
 }
