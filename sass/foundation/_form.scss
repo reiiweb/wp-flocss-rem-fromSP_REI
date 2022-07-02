@@ -69,6 +69,7 @@ select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  color: inherit;
 }
 
 textarea {
@@ -127,7 +128,6 @@ input[type="radio"] + span,
 input[type="checkbox"] + span {
   display: inline-block;
   position: relative;
-  color: #1b224c;
   cursor: pointer;
 }
 input[type="radio"] + span::before,
@@ -169,15 +169,10 @@ input[type="submit"]::-moz-foucus-inner {
 input[type="reset"],
 input[type="button"] {
   display: inline-block;
-  padding: rem(10) rem(30);
-  border: 1px solid #999;
   border-radius: 0;
   -webkit-box-sizing: content-box;
   -webkit-appearance: button;
   appearance: button;
-  // background: #efefef;
-  color: #000;
-  font-size: rem(20);
   cursor: pointer;
 }
 
@@ -194,6 +189,11 @@ input[type="button"] {
 // [type="reset"]:-moz-focusring,
 // [type="submit"]:-moz-focusring {
 // }
+input[type="button"]::-moz-foucus-inner,
+input[type="submit"]::-moz-foucus-inner {
+  border: none;
+  padding: 0;
+}
 /* IE */
 // input::-ms-clear {
 // }
@@ -300,15 +300,16 @@ input[type="search"]::-webkit-search-decoration {
 // }
 
 /* focus */
-// input:focus,
-// textarea:focus {
-//   border-color: #ccc;
-// }
+input:focus,
+textarea:focus {
+  box-shadow: none;
+	outline: none;
+}
 input[type="submit"]:focus,
 input[type="reset"]:focus,
 input[type="button"]:focus,
 input[type="search"]:focus {
-  outline-offset: -2px;
+  outline-offset: rem(-2);
 }
 
 /* disabled */
@@ -343,5 +344,9 @@ input::placeholder,
 textarea::placeholder {
   color: #b4b4b4;
   font-size: rem(12);
-  // padding-top: rem(2);
+}
+
+textarea::placeholder {
+  // ズレる場合
+  // padding-top: rem(5);
 }
