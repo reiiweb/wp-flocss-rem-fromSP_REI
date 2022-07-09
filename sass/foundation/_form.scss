@@ -340,13 +340,18 @@ input:invalid {
 input:required {
 }
 /* placeholder */
-input::placeholder,
-textarea::placeholder {
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
   color: #b4b4b4;
   font-size: rem(12);
 }
-
-textarea::placeholder {
-  // ズレる場合
-  // padding-top: rem(5);
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: #b4b4b4;
+  font-size: rem(12);
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #b4b4b4;
+  font-size: rem(12);
 }
